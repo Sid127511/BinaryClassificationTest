@@ -1,0 +1,7 @@
+Get both the python extension for VS Code and the PDF viewer
+
+Python
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+PDF Viewer
+https://marketplace.visualstudio.com/items?itemName=mathematic.vscode-pdf
