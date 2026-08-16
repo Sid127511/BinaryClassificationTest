@@ -1,4 +1,5 @@
 from random import uniform
+import matplotlib.pyplot as plt
 
 
 # Make a prediction with weights
@@ -17,6 +18,9 @@ def classify(row, weights):
  
 #Estimate Perceptron weights using stochastic gradient descent
 def train(train_data, n_epoch, l_rate=1):
+    epochs = []
+    percents = []
+
     weights = [];
     #randomize weights
     for i in range(len(train_data[0])):
@@ -38,3 +42,14 @@ def train(train_data, n_epoch, l_rate=1):
         #ourput success(excpect it to be low this is very basic)
         percent = success/len(train_data)
         print("Epoch", i+1, "....", percent*100, "% correct")
+
+        #for plotting
+        epochs.append(i+1)
+        percents.append(percent*100)
+
+    #Plot your success if you want
+    plt.plot(epochs, percents)
+    plt.xlabel('# of Epochs')
+    plt.ylabel('Success in %')
+    plt.savefig('graph.png')
+    plt.close()
